@@ -31,7 +31,7 @@ def test_root(test_client):
 
 def test_add_character_one(test_client):
     response = test_client.post("/api/v1/character/add", json=mock_character_1)
-    assert response.status_code == 200
+    assert response.status_code == 201
     data = response.json()
     assert data == dict(mock_character_1, **{"id": 1})
 
@@ -60,7 +60,7 @@ def test_get_character(test_client):
 
 def test_add_character_two(test_client):
     response = test_client.post("/api/v1/character/add", json=mock_character_2)
-    assert response.status_code == 200
+    assert response.status_code == 201
     data = response.json()
     assert data == dict(mock_character_2, **{"id": 2})
 

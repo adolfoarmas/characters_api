@@ -5,7 +5,6 @@ from starlette.status import HTTP_422_UNPROCESSABLE_ENTITY
 
 async def validation_exception_handler(request: Request, exc: RequestValidationError):
     if "json" in str(exc):
-        print(str(exc))
         return JSONResponse(
             status_code=HTTP_422_UNPROCESSABLE_ENTITY,
             content={
@@ -19,8 +18,6 @@ async def validation_exception_handler(request: Request, exc: RequestValidationE
     )
 
 async def validation_response_exception_handler(response: Response, exc: ResponseValidationError):
-    """
-    print(exc)
     if "validation errors" in str(exc):
         error_fields = [str(e['loc'][-1]) for e in exc.errors()]
         return JSONResponse(
@@ -30,7 +27,7 @@ async def validation_response_exception_handler(response: Response, exc: Respons
                 "errors": exc.errors()
                 },
         )
-        """
+        
     return JSONResponse(
         status_code=HTTP_422_UNPROCESSABLE_ENTITY,
         content={"detail": exc.errors()},

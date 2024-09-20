@@ -10,8 +10,7 @@ from alembic import context
 project_root = sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from src.core.database import Base
-from domain.character.models import Character
-
+from src.domain.character.models import Character
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.

@@ -115,5 +115,14 @@ characters = [
         "skin_color": "light",
         "eye_color": "brown",
         "birth_year": 46
+    },
+    {
+        "name": "Mala",
+        "height": 165,
+        "mass": 55,
+        "hair_color": "",
+        "skin_color": "",
+        "eye_color": "brown",
+        "birth_year": 46
     }
 ]

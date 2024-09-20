@@ -14,7 +14,6 @@ def get_character(id: int, db: Session):
 
 def add_character(character: CharacterBase, db: Session):
     db_character = Character(**character.model_dump())
-    print(db_character)
     db.add(db_character)
     db.commit()
     db.refresh(db_character)
